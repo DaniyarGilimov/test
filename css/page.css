@@ -1,0 +1,522 @@
+body {
+	/*background-color: #e5e5e5;*/
+}
+.onoffswitch {
+    position: relative; width: 67px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 22px; padding: 0; line-height: 22px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 21px; margin: 0.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 41px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.navbar-brand {/*Вынос*/
+	text-transform: uppercase;
+}
+
+.group-options{
+	z-index: 1;
+}
+/*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ 
+@media (min-width: 1200px) {
+	.notice {
+		margin: 5px;
+		background-color: #337ab7;
+		padding: 10px;
+		width: auto;
+		color: #fff;
+		border-bottom: 2px solid #2c3e50;
+	}
+.add {
+	text-align: center;
+	display: none;
+}
+
+.glyphicon-plus {
+	
+}
+
+.glyphicon-plus:hover {
+	
+}
+
+.p-warning:hover {
+	color: #000;
+}
+
+.btn-option {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-option:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-delete {
+	background-color:  #e74c3c; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+}
+.btn-delete:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+/*RAZDEL BEGIN*/
+.btn-delete-razdel {
+	background-color: #e74c3c ; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+
+}
+.btn-option-razdel:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+
+}
+.btn-delete-razdel:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+.btn-option-razdel {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+/*RAZDEL END*/
+.group-options {
+	position: absolute;
+}
+.group-options > a {
+	color: #000;
+}
+.active-option{
+	background-color: #E7E7E7;
+}
+.group-options-razdel{
+	position: absolute;
+	padding-top: 20px;
+}
+.group-options-razdel > a{
+	color: #000;
+}
+.imgchange{
+	width: 500px;
+	height: 500px;
+	vertical-align: middle;
+	text-align: center;
+}
+.block-opt > .imgchange > img {/*Вынос*/
+	border: 5px solid #E7E7E7 ;
+	max-width: 500px; 
+	max-height: 500px;
+}
+.imgchoose {
+	opacity: 0.5;
+	padding-top: 230px;
+	padding-left: 110px;
+	padding-right: 50px;
+	padding-bottom: 220px;
+	position: absolute;
+	top: 0px;
+    left: 0;
+}
+.imgchoose:hover {
+	opacity: 1;
+}
+#parent_popup {
+background: rgba(78, 78, 78, 0.61); ;
+height: 100%;
+position: fixed;
+width: 100%;
+z-index: 100;
+top: 0;
+left: 0;
+display: none;
+}
+#popup {
+position: absolute;
+background-color: #2c3e50;
+height: 200px;
+position: fixed;
+top: 100px;
+left: 40%;
+color: #f00;
+width: 300px;
+opacity: 2;
+border-radius: 5px;
+padding: 10px;
+}
+
+}
+/*MEDIA*/ /*MEDIA*//*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ 
+@media (min-width: 769px) and (max-width: 1199px) {
+	.notice {
+		margin: 5px;
+		background-color: #337ab7;
+		padding: 10px;
+		width: auto;
+		color: #fff;
+		border-bottom: 2px solid #2c3e50;
+	}
+.comp-dobav {
+	display: none;
+}
+
+.glyphicon-plus {
+	
+}
+
+.glyphicon-plus:hover {
+	
+}
+
+.p-warning:hover {
+	color: #000;
+}
+
+.btn-option {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-option:hover {
+	background-color: #ba97c5;
+	border: 2px solid #866590;
+}
+.btn-option {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-option:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-delete {
+	background-color:  #e74c3c; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+}
+.btn-delete:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+/*RAZDEL BEGIN*/
+.btn-delete-razdel {
+	background-color: #e74c3c ; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+}
+.btn-option-razdel:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+
+}
+.btn-delete-razdel:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+.btn-option-razdel {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.group-options {
+	position: absolute;
+}
+.group-options > a {
+	color: #000;
+}
+.active-option{
+	background-color: #E7E7E7;
+}
+.group-options-razdel{
+	position: relative;
+	padding-top: 20px;
+}
+.group-options-razdel > a{
+	color: #000;
+}
+
+
+.imgchoose {
+	opacity: 0.5;
+	padding-top: 230px;
+	padding-left: 110px;
+	padding-right: 50px;
+	padding-bottom: 220px;
+	position: absolute;
+	top: 0px;
+    left: 0;
+}
+.imgchoose:hover {
+	opacity: 1;
+}
+.block-opt > .imgchange > img {/*Вынос*/
+	border: 5px solid #E7E7E7 ;
+	width: 500px; 
+	height: auto;
+}
+#parent_popup {
+background: rgba(78, 78, 78, 0.61); ;
+height: 100%;
+position: fixed;
+width: 100%;
+z-index: 100;
+top: 0;
+left: 0;
+display: none;
+}
+#popup {
+position: absolute;
+background-color: #2c3e50;
+height: 200px;
+position: fixed;
+top: 100px;
+left: 40%;
+color: #f00;
+width: 300px;
+opacity: 2;
+border-radius: 5px;
+padding: 10px;
+}
+
+}
+/*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ 
+@media (max-width: 768px) and (min-width: 351px) {
+	.notice {
+		margin: 5px;
+		background-color: #337ab7;
+		padding: 10px;
+		width: auto;
+		color: #fff;
+		border-bottom: 2px solid #2c3e50;
+	}
+	.block-opt > .imgchange > img {/*Вынос*/
+	border: 5px solid #E7E7E7 ;
+	width: 350px; 
+	height: auto;
+}
+.tel-dobav > button{
+	width: 100%;
+}
+.comp-dobav{
+	display: none;
+}
+
+.p-warning:hover {
+	color: #000;
+}
+
+.btn-option {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-option:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-delete {
+	background-color:  #e74c3c; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+}
+.btn-delete:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+/*RAZDEL BEGIN*/
+.btn-delete-razdel {
+	background-color: #e74c3c ; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+
+}
+.btn-option-razdel:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+
+}
+.btn-delete-razdel:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+.btn-option-razdel {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.group-options {
+	position: relative;
+	
+}
+.group-options > a {
+	color: #000;
+}
+.active-option{
+	background-color: #E7E7E7;
+}
+.group-options-razdel{
+	position: relative;
+}
+.group-options-razdel > a{
+	color: #000;
+}
+
+#parent_popup {
+background: rgba(78, 78, 78, 0.61); ;
+height: 100%;
+position: fixed;
+width: 100%;
+z-index: 100;
+top: 0;
+left: 0;
+display: none;
+}
+#popup {
+position: absolute;
+background-color: #2c3e50;
+height: 200px;
+position: fixed;
+top: 100px;
+color: #f00;
+width: 100%;
+opacity: 2;
+border-radius: 5px;
+padding: 10px;
+
+}
+#popup > a {
+	font-size: 18px;
+}
+
+}
+/*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ /*MEDIA*/ 
+@media (max-width: 350px) {
+	.notice {
+		margin: 5px;
+		background-color: #337ab7;
+		padding: 10px;
+		width: auto;
+		color: #fff;
+		border-bottom: 2px solid #2c3e50;
+	}
+	.block-opt > .imgchange > img {/*Вынос*/
+	border: 5px solid #E7E7E7 ;
+	width: 300px; 
+	height: auto;
+}
+	.tel-dobav > button{
+	width: 100%;
+}
+.comp-dobav{
+	display: none;
+}
+
+.p-warning:hover {
+	color: #000;
+}
+.btn-option {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-option:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+}
+.btn-delete {
+	background-color:  #e74c3c; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+}
+.btn-delete:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+/*RAZDEL BEGIN*/
+.btn-delete-razdel {
+	background-color: #e74c3c ; /* #f7b5b5; */
+	border: 2px solid #2c3e50;
+	width: 100%;
+}
+.btn-option-razdel:hover {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+
+}
+.btn-delete-razdel:hover {
+	background-color: #e74c3c ;
+	border: 2px solid #2c3e50;
+}
+.btn-option-razdel {
+	background-color: #ba97c5;
+	border: 2px solid #2c3e50;
+	width: 100%;
+}
+.group-options {
+	position: relative;
+	
+}
+.group-options > a {
+	color: #000;
+}
+.active-option{
+	background-color: #E7E7E7;
+}
+.group-options-razdel{
+	position: relative;
+}
+.group-options-razdel > a{
+	color: #000;
+}
+#parent_popup {
+background: rgba(78, 78, 78, 0.61); ;
+height: 100%;
+position: fixed;
+width: 100%;
+z-index: 100;
+top: 0;
+left: 0;
+display: none;
+}
+#popup {
+position: absolute;
+background-color: #2c3e50;
+height: 200px;
+position: fixed;
+top: 100px;
+color: #f00;
+width: 100%;
+opacity: 2;
+border-radius: 5px;
+padding: 10px;
+}
+#popup > a {
+	font-size: 18px;
+}
+}

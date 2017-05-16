@@ -1,0 +1,9 @@
+http://www.imagecms.net/addons/shop/category/shablony-imagecms-shop?free=0
+
+<
+#809FCF Ашык кок баттон
+#8098A1 кок серый баттон
+#F1F4F5 фон сероватый кок
+
+
+>

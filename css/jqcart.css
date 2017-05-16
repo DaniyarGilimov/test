@@ -1,0 +1,673 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+/* ------------- Стили для корзины ------------- */
+/* Ярлык корзины */
+@media (min-width: 1200px) {
+.jqcart-cart-label {
+    position: relative;
+    text-align: center;
+    letter-spacing: -0.36em;
+    white-space: nowrap;
+    cursor: pointer;
+    /*padding: 15px;*/
+}
+.jqcart-cart-label span {
+    display: inline-block;
+    padding: 13px 15px;
+    font-size: 18px;
+    letter-spacing: normal;
+    background-color: #f39c12;
+    color: #F7F7F7;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jqcart-cart-label .jqcart-title {
+    width: auto;
+    border-right: 1px solid #F7F7F7;
+    text-align: left;
+}
+.jqcart-cart-label .jqcart-total-cnt {
+    width: auto;
+}
+/* Модальное окно */
+.jqcart-layout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    z-index: 998;
+}
+.jqcart-layout:before {
+    content:'';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.36em;
+}
+.jqcart-checkout {
+    display: inline-block;
+    margin-top: 58px;
+    margin-right: 10px;
+    width: 430px;
+    height: auto;
+    background-color: #F7F7F7;
+    max-height: 500px;
+    overflow: auto;
+    -webkit-box-shadow: -1px 5px 24px -2px rgba(0,0,0,0.66);
+    -moz-box-shadow: -1px 5px 24px -2px rgba(0,0,0,0.66);
+    box-shadow: -1px 5px 24px -2px rgba(0,0,0,0.66);
+    border-radius: 6px;
+}
+/* Таблица с заказанными товарами */
+.jqcart-cart-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    /*font-weight: bold;*/
+    text-align: left;
+    color: #2c3e50;
+}
+.jqcart-manage-order {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.jqcart-manage-order > div {
+    display: table-row;
+}
+.jqcart-manage-order .jqcart-row-group {
+    display: table-row-group;
+}
+.jqcart-manage-order > div > div {
+    font-size: 17px;
+    display: table-cell;
+    text-align: center;
+    /*border: 1px solid #CCC;*/
+    vertical-align: middle;
+    /*margin-bottom: 5px;*/
+}
+.jqcart-manage-order > div > div input {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-left: 0px;
+    border-right: 0px;
+    /*border-radius: 5px;*/
+    vertical-align: middle;
+}
+.jqcart-manage-order .jqcart-small-td {
+  width: auto;
+}
+.jqcart-manage-order .jqcart-item-img img {
+    padding-top: 15px;
+  max-width: 60px;
+  max-height: 64px;
+}
+.jqcart-thead {
+    /*font-weight: bold;*/
+}
+.jqcart-thead div {
+    text-align: center;
+}
+.jqcart-subtotal {
+    margin-right: 15px;
+    margin-top: 10px;
+    border-top: 1px solid #CCC;
+    font-size: 1.2em;
+    text-align: right;
+    margin-left: 15px;
+    padding-top: 10px;
+}
+.jqcart-incr {
+    display: inline-block;
+    border: 1px solid #CCC;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    vertical-align: middle;
+    /*color: red;*/
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Кнопка удаления отдельного товара из корзины */
+.jqcart-del-item {
+    font-weight: bold;
+    /*display: inline-block;*/
+    display: table-cell;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20px;
+    height: 20px;
+    font-family: Century Gothic;
+    text-align: center;
+    /*border: 1px solid #F00;
+    background-color: #f00;
+    color: #FFF;*/
+   /* border-radius: 50%;*/
+    cursor: pointer;
+    color: #F00;
+}
+/*.jqcart-del-item:before {
+  display: inline-block;
+  content: 'X';
+  vertical-align: text-bottom;
+}*/
+.jqcart-del-item:hover {
+    text-decoration: none;
+    color: #000;
+    /*background-color: #FFF;*/
+    
+}
+/* Форма для заказчика */
+.jqcart-orderform {
+    text-align: left;
+}
+.jqcart-orderform::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.jqcart-orderform p {
+    margin-left: 10px;
+
+}
+.jqcart-orderform label {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.jqcart-orderform .wideawake{
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 17px;
+}
+.jqcart-orderform p:nth-child(5) label {
+    vertical-align: top;
+}
+.jqcart-orderform label::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    /*border-bottom: 1px dotted #CCC;*/
+}
+.jqcart-orderform p:last-child {
+    margin-right: 10px;
+
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #CCC; 
+}
+.jqcart-orderform input[type=text],
+.jqcart-orderform textarea {
+    width: 250px;
+    padding: 3px;
+    border: 1px solid #CCC;
+    /*border-radius: 5px;*/
+    resize: vertical;
+}
+
+.jqcart-orderform input[type=submit] {
+    float: right;
+}
+
+.jqcart-orderform input[type=submit],
+.jqcart-orderform input[type=reset] {
+    padding: 5px;
+    font-size: 17px;
+}
+.jqcart-error {
+    color: #f00;
+}
+.paddingclass {
+    padding-right: 5px;
+} }
+                                                                        /*MEDIA 1199 360 px tprttprt*/
+@media (max-width: 1199px) and (min-width: 351px) {
+    .jqcart-cart-label .jqcart-title {
+    width: auto;
+    text-align: left;
+}
+.jqcart-cart-label .jqcart-total-cnt {
+    display: none;
+}
+.jqcart-cart-label span {
+    letter-spacing: normal;
+    background-color: #6F5F7C;
+        position: fixed;
+        right: 25px;
+        bottom: 15px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #ffffff;
+        display:inline-block;
+        padding: 13px;
+        border-radius: 5px;
+        float: right;
+        height: 48px;
+        width: auto;
+        opacity: 0.94;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jqcart-cart-label {
+    text-align: right;
+    letter-spacing: -0.36em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.jqcart-checkout {
+    display: inline-block;
+    margin-top: 60px;
+    width: auto;
+    height: auto;
+    background-color: #F7F7F7;
+    border: 1px solid #707070;
+    max-height: 80%;
+    overflow: auto;
+}
+.jqcart-manage-order .jqcart-small-td {
+  width: auto;
+}
+.jqcart-manage-order .jqcart-item-img img {
+    display: none;
+}
+.jqcart-incr {
+    display:block;
+    font-size: 1.1em;
+    padding: 5px;
+    cursor: pointer;
+    color: red
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.jqcart-error {
+    color: #f00;
+}
+.jqcart-layout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    z-index: 998;
+}
+.jqcart-layout:before {
+    content:'';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.36em;
+}
+/* Таблица с заказанными товарами */
+.jqcart-cart-title {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    color: #3d8e68;
+}
+.jqcart-manage-order {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.jqcart-manage-order > div {
+    display: table-row;
+}
+.jqcart-manage-order .jqcart-row-group {
+    display: table-row-group;
+}
+.jqcart-manage-order > div > div {
+    display: table-cell;
+    text-align: center;
+    border: 1px solid #CCC;
+    vertical-align: middle;
+}
+.jqcart-manage-order > div > div input {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.jqcart-manage-order .jqcart-small-td {
+  width: auto;
+}
+.jqcart-manage-order .jqcart-item-img img {
+  max-width: 60px;
+  max-height: 64px;
+}
+.jqcart-thead {
+    font-weight: bold;
+}
+.jqcart-thead div {
+    text-align: center;
+}
+.jqcart-subtotal {
+    font-size: 1.2em;
+    text-align: right;
+}
+/* Кнопка удаления отдельного товара из корзины */
+.jqcart-del-item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-family: Century Gothic;
+    text-align: center;
+    border: 1px solid #F00;
+    background-color: #f00;
+    color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.jqcart-del-item:before {
+  display: inline-block;
+  content: 'X';
+  vertical-align: text-bottom;
+}
+.jqcart-del-item:hover {
+    color: #F00;
+    background-color: #FFF;
+    
+}
+/* Форма для заказчика */
+.jqcart-orderform {
+    text-align: left;
+}
+.jqcart-orderform::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.jqcart-orderform p {
+    margin-left: 5px;
+
+}
+.jqcart-orderform label {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.jqcart-orderform p:nth-child(5) label {
+    vertical-align: top;
+}
+.jqcart-orderform label::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    border-bottom: 1px dotted #CCC;
+}
+.jqcart-orderform p:last-child {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #CCC; 
+}
+.jqcart-orderform input[type=text],
+.jqcart-orderform textarea {
+    width: 250px;
+    padding: 3px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.jqcart-orderform input[type=submit] {
+    float: right;
+}
+
+.jqcart-orderform input[type=submit],
+.jqcart-orderform input[type=reset] {
+    padding: 5px;
+}
+.paddingclass {
+    padding-right: 5px;
+}
+}
+                                                                        /*MEDIA 360px trptrtprtotrptrt*/
+@media (max-width: 350px) {
+    .jqcart-cart-label .jqcart-title {
+    width: auto;
+    text-align: left;
+}
+.jqcart-cart-label .jqcart-total-cnt {
+    display: none;
+}
+.jqcart-cart-label {
+    text-align: right;
+    letter-spacing: -0.36em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.jqcart-checkout {
+    display: inline-block;
+    margin-top: 60px;
+    width: auto;
+    height: auto;
+    background-color: #F7F7F7;
+    border: 1px solid #707070;
+    max-height: 90%;
+    overflow: auto;
+}
+.jqcart-manage-order .jqcart-small-td {
+  width: auto;
+}
+.jqcart-manage-order .jqcart-item-img img {
+    display: none;
+}
+.jqcart-incr {
+    display:block;
+    font-size: 1.1em;
+    padding: 5px;
+    cursor: pointer;
+    color: red
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.jqcart-error {
+    color: #f00;
+}
+.jqcart-layout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    z-index: 998;
+}
+.jqcart-layout:before {
+    content:'';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.36em;
+}
+/* Таблица с заказанными товарами */
+.jqcart-cart-title {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    color: #3d8e68;
+}
+.jqcart-manage-order {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+.jqcart-manage-order > div {
+    display: table-row;
+}
+.jqcart-manage-order .jqcart-row-group {
+    display: table-row-group;
+}
+.jqcart-manage-order > div > div {
+    display: table-cell;
+    text-align: center;
+    border: 1px solid #CCC;
+    vertical-align: middle;
+}
+.jqcart-manage-order > div > div input {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.jqcart-manage-order .jqcart-small-td {
+  width: auto;
+}
+.jqcart-manage-order .jqcart-item-img img {
+  max-width: 60px;
+  max-height: 64px;
+}
+.jqcart-thead {
+    font-weight: bold;
+}
+.jqcart-thead div {
+    text-align: center;
+}
+.jqcart-subtotal {
+    font-size: 1.2em;
+    text-align: right;
+}
+/* Кнопка удаления отдельного товара из корзины */
+.jqcart-del-item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-family: Century Gothic;
+    text-align: center;
+    border: 1px solid #F00;
+    background-color: #f00;
+    color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.jqcart-del-item:before {
+  display: inline-block;
+  content: 'X';
+  vertical-align: text-bottom;
+}
+.jqcart-del-item:hover {
+    color: #F00;
+    background-color: #FFF;
+    
+}
+/* Форма для заказчика */
+.jqcart-orderform {
+    text-align: left;
+}
+.jqcart-orderform::after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.jqcart-orderform p {
+    margin-left: 5px;
+
+}
+.jqcart-orderform label {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.jqcart-orderform p:nth-child(5) label {
+    vertical-align: top;
+}
+.jqcart-orderform label::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    border-bottom: 1px dotted #CCC;
+}
+.jqcart-orderform p:last-child {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #CCC; 
+}
+.jqcart-orderform input[type=text],
+.jqcart-orderform textarea {
+    width: 250px;
+    padding: 3px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.jqcart-orderform input[type=submit] {
+    float: right;
+}
+
+.jqcart-orderform input[type=submit],
+.jqcart-orderform input[type=reset] {
+    padding: 5px;
+}
+.paddingclass {
+    padding-right: 5px;
+}
+    .jqcart-cart-label span {
+    letter-spacing: normal;
+    background-color: #6F5F7C;
+        position: fixed;
+        right: 25px;
+        bottom: 15px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #ffffff;
+        display:inline-block;
+        padding: 9px;
+        border-radius: 5px;
+        float: right;
+        height: 41px;
+        width: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+}
+/* негизги беттен  келд*/
+
+
+/* негизги беттен  келд битти*/

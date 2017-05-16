@@ -1,0 +1,28 @@
+.block-inf{
+	/*border: 1px solid #fff;*/
+-webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.15);
+    -moz-box-shadow: 0 0 4px 0 rgba(0,0,0,.15);
+    -ms-box-shadow: 0 0 4px 0 rgba(0,0,0,.15);
+    -o-box-shadow: 0 0 4px 0 rgba(0,0,0,.15);
+}
+.block-inf:hover{
+	/*border: 1px solid #e7e7e7;*/
+	-webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+    -moz-box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+    -ms-box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+    -o-box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+}
+.block-inf h1{
+	margin: 0px;
+}
+.block-inf .mid:hover{
+	cursor: pointer;
+}
+@media (min-width: 1199px){
+
+	.btn-back{
+		position: fixed;
+		top: 65px;
+		left: 5px;
+	}
+}
